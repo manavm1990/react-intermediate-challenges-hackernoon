@@ -4,8 +4,8 @@ import Item from "./Item/Item";
 function List({ items }) {
   return (
     <ul>
-      {items.map((item, i) => (
-        <Item key={i} txt={item} />
+      {items.map((item) => (
+        <Item key={item.id} txt={item.title} />
       ))}
     </ul>
   );
