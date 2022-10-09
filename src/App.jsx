@@ -1,25 +1,13 @@
+import List from "components/List/List";
 import "./App.css";
-import logo from "./logo.svg";
+import useFetch from "./hooks/useFetch";
 
 function App() {
-  return (
-    <div className="text-center">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://beta.reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React (Beta Docs)
-        </a>
-      </header>
-    </div>
+  const [data, loading] = useFetch(
+    "https://jsonplaceholder.typicode.com/todos"
   );
+
+  return loading ? <p>Loading...</p> : <List items={data} />;
 }
 
 export default App;

@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react";
 
-export default function useTodos(
+export default function useFetch(
   url = "https://jsonplaceholder.typicode.com/todos"
 ) {
-  const [todos, setTodos] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [todos, setTodos] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
         setTodos(data);
         setLoading(false);
       });
-  }, []);
+  }, [url]);
 
   return [todos, loading];
 }
