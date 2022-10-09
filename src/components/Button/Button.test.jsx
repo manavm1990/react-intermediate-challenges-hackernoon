@@ -9,22 +9,24 @@ function setup(component) {
   };
 }
 
-it("renders the button with the proper text", () => {
-  render(<Button txt="Hello" handleClick={() => {}} />);
+describe("Button", () => {
+  it("renders the button with the proper text", () => {
+    render(<Button txt="Hello" handleClick={() => {}} />);
 
-  const button = screen.getByRole("button");
+    const button = screen.getByRole("button");
 
-  expect(button).toBeInTheDocument();
-  expect(button).toHaveTextContent("Hello");
-});
+    expect(button).toBeInTheDocument();
+    expect(button).toHaveTextContent("Hello");
+  });
 
-it("calls the onClick handler when clicked", async () => {
-  const onClick = jest.fn();
+  it("calls the onClick handler when clicked", async () => {
+    const onClick = jest.fn();
 
-  const { user } = setup(<Button handleClick={onClick} txt="Hello" />);
+    const { user } = setup(<Button handleClick={onClick} txt="Hello" />);
 
-  const button = screen.getByRole("button");
-  await user.click(button);
+    const button = screen.getByRole("button");
+    await user.click(button);
 
-  expect(onClick).toHaveBeenCalled();
+    expect(onClick).toHaveBeenCalled();
+  });
 });
