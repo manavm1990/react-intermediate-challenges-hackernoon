@@ -3,7 +3,7 @@ import Item from "./Item";
 
 describe("Item", () => {
   it("renders the item with the proper text", () => {
-    render(<Item txt="Hello" />);
+    render(<Item id={1} txt="Hello" />);
 
     const item = screen.getByRole("listitem");
 
@@ -11,7 +11,9 @@ describe("Item", () => {
   });
 
   it("renders the item with the proper text and children", () => {
-    render(<Item txt="Hello" renderContent={() => <span>World</span>} />);
+    render(
+      <Item id={1} txt="Hello" renderContent={() => <span>World</span>} />
+    );
 
     const item = screen.getByRole("listitem");
     const content = within(item).getByText("World");

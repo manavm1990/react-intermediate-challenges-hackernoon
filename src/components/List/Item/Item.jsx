@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 
-function Item({ txt, renderContent }) {
+function Item({ id, txt, renderContent }) {
   return (
-    <li>
+    <li id={id}>
       {txt}
       {renderContent && renderContent()}
     </li>
@@ -10,6 +10,7 @@ function Item({ txt, renderContent }) {
 }
 
 Item.propTypes = {
+  id: PropTypes.number.isRequired,
   txt: PropTypes.string.isRequired,
   renderContent: PropTypes.func,
 };
