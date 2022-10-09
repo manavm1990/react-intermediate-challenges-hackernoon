@@ -15,5 +15,5 @@ export default function useFetch(
       });
   }, [url]);
 
-  return [todos, loading];
+  return [todos, loading, setTodos];
 }
