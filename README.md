@@ -5,3 +5,5 @@
 > When the button is clicked, the text in the input field should be added below in a list. Moreover, whenever any list item is clicked, it should be removed from the list.
 > The motive of this challenge is to check how good the developer is with forms, state, and lists.
 > [Hackernoon Post](https://hackernoon.com/top-3-coding-challenges-for-mid-level-react-developers)
+
+This one also loads fake data. The state is then maintained locally in the App and is deleted like that. Not a 'real' deletion.
