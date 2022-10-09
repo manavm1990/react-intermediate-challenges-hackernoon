@@ -66,6 +66,7 @@
           "destructuredArrayIgnorePattern": "^_"
         }
       ],
+      "react/button-has-type": "warn",
       "use-encapsulation/prefer-custom-hooks": 1
     }
   },
