@@ -16,11 +16,9 @@ function List({ items, handleDelete }) {
 
 List.propTypes = {
   items: PropTypes.arrayOf(
-    PropTypes.exact({
-      userId: PropTypes.number.isRequired,
+    PropTypes.shape({
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
-      completed: PropTypes.bool.isRequired,
     })
   ).isRequired,
   handleDelete: PropTypes.func,
