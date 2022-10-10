@@ -11,7 +11,7 @@ function setup(component) {
 
 describe("Button", () => {
   it("renders the button with the proper text", () => {
-    render(<Button txt="Hello" handleClick={() => {}} />);
+    render(<Button txt="Hello" />);
 
     const button = screen.getByRole("button");
 

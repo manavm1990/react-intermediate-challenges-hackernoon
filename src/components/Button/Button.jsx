@@ -15,11 +15,12 @@ function Button({ txt, type, handleClick }) {
 Button.propTypes = {
   txt: PropTypes.string.isRequired,
   type: PropTypes.oneOf(["button", "submit", "reset"]),
-  handleClick: PropTypes.func.isRequired,
+  handleClick: PropTypes.func,
 };
 
 Button.defaultProps = {
   type: "button",
+  handleClick: () => {},
 };
 
 export default Button;
