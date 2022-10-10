@@ -3,7 +3,7 @@ import TextInput from "./TextInput";
 
 describe("TextInput", () => {
   it("renders the text input with the proper label", () => {
-    render(<TextInput label="Hello" />);
+    render(<TextInput label="Hello" id="hello" />);
 
     const input = screen.getByLabelText("Hello");
 

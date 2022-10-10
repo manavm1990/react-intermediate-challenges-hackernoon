@@ -1,15 +1,16 @@
 import PropTypes from "prop-types";
 
-function TextInput({ label }) {
+function TextInput({ id, label }) {
   return (
     <div>
-      <label htmlFor={label}>{label}</label>
-      <input id={label} />
+      <label htmlFor={id}>{label}</label>
+      <input id={id} />
     </div>
   );
 }
 
 TextInput.propTypes = {
+  id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
 };
 
