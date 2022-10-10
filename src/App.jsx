@@ -15,7 +15,10 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const newTodo = e.target.elements[0].value;
+    const form = e.target;
+
+    const newTodo = form.elements[0].value;
+    form.reset();
 
     setData((prev) => [
       ...prev,
