@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import Form from "./Form";
+import AddTodo from "./AddTodo";
 
 function setup(component) {
   return {
@@ -14,7 +14,7 @@ test("Form", async () => {
     e.preventDefault();
   });
 
-  const { user } = setup(<Form handleSubmit={handleSubmit} />);
+  const { user } = setup(<AddTodo handleSubmit={handleSubmit} />);
 
   const button = screen.getByRole("button");
 
