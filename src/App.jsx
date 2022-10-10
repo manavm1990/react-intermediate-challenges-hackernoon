@@ -1,6 +1,7 @@
 import List from "components/List/List";
 import "./App.css";
 import useFetch from "./hooks/useFetch";
+import AddTodo from "./layout/AddTodo/AddTodo";
 
 function App() {
   const [data, loading, setData] = useFetch(
@@ -11,10 +12,27 @@ function App() {
     setData(data.filter((item) => item.id !== id));
   };
 
-  return loading ? (
-    <p>Loading...</p>
-  ) : (
-    <List items={data} handleDelete={handleDelete} />
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const newTodo = e.target.elements[0].value;
+
+    setData((prev) => [
+      ...prev,
+      { id: prev.length + 1, title: newTodo, completed: false },
+    ]);
+  };
+
+  return (
+    <>
+      <AddTodo handleSubmit={handleSubmit} />
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <List items={data} handleDelete={handleDelete} />
+      )}
+      ;
+    </>
   );
 }
 
