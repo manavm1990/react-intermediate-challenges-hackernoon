@@ -12,7 +12,9 @@ describe("Item", () => {
 
   it("renders the item with the proper text and children", () => {
     render(
-      <Item id={1} txt="Hello" renderContent={() => <span>World</span>} />
+      <Item id={1} txt="Hello">
+        <p>World</p>
+      </Item>
     );
 
     const item = screen.getByRole("listitem");

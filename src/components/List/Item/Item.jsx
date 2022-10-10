@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 
-function Item({ id, txt, renderContent }) {
+function Item({ id, txt, children }) {
   return (
     <li id={id}>
       {txt}
-      {renderContent && renderContent()}
+      {children}
     </li>
   );
 }
@@ -12,11 +12,15 @@ function Item({ id, txt, renderContent }) {
 Item.propTypes = {
   id: PropTypes.number.isRequired,
   txt: PropTypes.string.isRequired,
-  renderContent: PropTypes.func,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+    PropTypes.func,
+  ])
 };
 
 Item.defaultProps = {
-  renderContent: null,
+  children: null,
 };
 
 export default Item;

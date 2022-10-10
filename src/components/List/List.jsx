@@ -3,19 +3,12 @@ import PropTypes from "prop-types";
 import Item from "./Item/Item";
 
 function List({ items, handleDelete }) {
-  const renderBtn = (id) => (
-    <Button txt="Delete" handleClick={() => handleDelete(id)} />
-  );
-
   return (
     <ul>
       {items.map((item) => (
-        <Item
-          key={item.id}
-          id={item.id}
-          txt={item.title}
-          renderContent={() => renderBtn(item.id)}
-        />
+        <Item key={item.id} id={item.id} txt={item.title}>
+          <Button txt="Delete" handleClick={() => handleDelete(item.id)} />
+        </Item>
       ))}
     </ul>
   );
